@@ -41,7 +41,7 @@ namespace TestingApp
                 Console.WriteLine();
 
 
-              // make sure the user is using valid inputs by using Parsing the inputs and then doing the multiplication
+            // make sure the user is using valid inputs by using Parsing the inputs and then doing the multiplication
 
          
                 Double intFNumber = Double.Parse(firstInput!);
