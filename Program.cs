@@ -17,7 +17,7 @@ namespace TestingApp
             //  a new line, printing out first and last name and coloring the text again >>>
                 string fullname = GetUserFullName();
                 Console.ForegroundColor= ConsoleColor.Green;
-                Console.WriteLine(fullname);
+                Console.WriteLine( "WELCOME MR. " + fullname);
                 
                                    
 
