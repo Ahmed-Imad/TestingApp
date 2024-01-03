@@ -1,118 +1,112 @@
-﻿using System;
+﻿PrintHeader();
 
-namespace TestingApp 
+// Get and display user's full name
+Console.ForegroundColor = ConsoleColor.White;
+string fullName = GetUserFullName();
+Console.ForegroundColor = ConsoleColor.Green;
+Console.WriteLine($"WELCOME MR. {fullName}\n");
+
+// Perform multiplication operation
+try
 {
-      internal class Program
-     {
-         static void Main(string[] args)
-         {
-            // the heading >>>
-            PrintHeader();
-            
-            // coloring the text and getting first and last names >>>
+    double result = GetUserNumber();
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine($"THE RESULT OF MULTIPLYING FIRST NUMBER AND SECOND NUMBER IS: {result}\n");
+}
+catch (FormatException)
+{
+    Console.ForegroundColor = ConsoleColor.DarkRed;
+    Console.WriteLine("UNABLE TO PARSE THE FIRST OR SECOND NUMBER!\n");
+}
 
-                Console.ForegroundColor= ConsoleColor.White;
+// Ask for user's opinion
+Console.ForegroundColor = ConsoleColor.White;
+Console.Write("DO YOU LIKE THE APP? ");
+string input = Console.ReadLine()?.ToLower() ?? "";
 
-
-            //  a new line, printing out first and last name and coloring the text again >>>
-                string fullname = GetUserFullName();
-                Console.ForegroundColor= ConsoleColor.Green;
-                Console.WriteLine( "WELCOME MR. " + fullname);
-                
-                                   
-
-            // a new line, entering the first and second numbers for mulit opration >>>
-                try
-                {
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine();
-                    double total =GetUserNumber();
-                    Console.WriteLine();
-                 
-                // make sure the user is using valid inputs by using Parsing the inputs and then doing the multiplication
-                                          
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"THE RESULT OF MULTIPLAYING " +
-                    $"FIRST NUMBER AND SECOND NUMBER IS: {total}");
-                    Console.WriteLine();
-                 }
-                  
-                catch (FormatException)
-                {
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.WriteLine($"NO RESULT!");
-                    Console.WriteLine($"UNABLE TO PARSE THE FIRST OR SECOND NUMBER!");
-                    Console.WriteLine();
-                }
-
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("DO YOU LIKE THE APP? ");
-            string? input= Console.ReadLine();
-            Console.WriteLine();
-            
-            Console.ForegroundColor = ConsoleColor.Green;
-            switch (input)
-            {
-              
-                case "yes":
-                case "YES":
-                case "yeah":
-                case "sure":
-                    Console.Write("THANKS!");
-                    break;
-
-                case "no":
-                case "NO":
-                case "nah":
-                    Console.Write("NOT A PROBLEM!");
-                    break;
-                case "not really":
-                case "NOT REALLY":
-                    Console.Write("OK! I GOT YOU.");
-                    break;
-                case "exit":
-                    Console.Clear();
-                    break;
-                default: Console.Write("I DON'T UNDERSTAND THAT!");
-                    break;
-            }
-
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.ReadLine();
-        }
-
-        static void PrintHeader()
-        {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("--------------------------------------------------------");
-            Console.WriteLine("WELCOME TO THE FUN WIZARD APP!");
-            Console.WriteLine("--------------------------------------------------------");
-            Console.WriteLine();
-        }
-        
-        static string GetUserFullName()
-        {
-            Console.Write("PLEASE ENTER YOUR FIRST NAME USE ONLY (A-Z) (a-z): ");
-            string? firstName = Console.ReadLine();
-            Console.Write("PLEASE ENTER YOUR LAST NAME USE ONLY (A-Z) (a-z): ");
-            string? lastName = Console.ReadLine();
-            
-            return firstName + " " + lastName;
-        }
-
-        static double GetUserNumber()
-        {
-            Console.Write("PLEASE ENTER FIRST NUMBER? ");
-            string? firstInput = Console.ReadLine();
-            Console.Write("PLEASE ENTER SECOND NUMBER? ");
-            string? secondInput = Console.ReadLine();
-            Double intFNumber = Double.Parse(firstInput!);
-            Double intSNumber = Double.Parse(secondInput!);
-            Double total = intFNumber * intSNumber;
-
-            return total;
-        }
+// Respond based on user input
+Console.ForegroundColor = ConsoleColor.Magenta;
+switch (input)
+{
+    case "yes" or "yeah" or "sure":
+        Console.WriteLine("THANKS!");
+        break;
+    case "no" or "nah":
+        Console.WriteLine("NOT A PROBLEM!");
+        break;
+    case "not really" or "somehow":
+        Console.WriteLine("OK! I GOT YOU.");
+        break;
+    case "exit":
+        Console.Clear();
+        Console.WriteLine("EXITING THE APP. GOODBYE!");
+        Environment.Exit(0);
+        break;
+    default:
+        Console.Clear();
+        Console.WriteLine("I DON'T UNDERSTAND THAT! EXITING THE APP.");
+        Console.ForegroundColor = ConsoleColor.White;
+        break;
+}
 
 
+static void PrintHeader()
+{
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.WriteLine("--------------------------------------------------------");
+    Console.WriteLine("WELCOME TO THE FUN WIZARD APP!");
+    Console.WriteLine("--------------------------------------------------------\n");
+    Console.ForegroundColor = ConsoleColor.White;
+}
+
+static string GetUserFullName()
+{
+    string? firstName, lastName;
+
+    do
+    {
+        Console.Write("PLEASE ENTER YOUR FIRST NAME (A-Z/a-z): ");
+        firstName = Console.ReadLine()?.Trim();
+    } while (string.IsNullOrWhiteSpace(firstName));
+
+    do
+    {
+        Console.Write("PLEASE ENTER YOUR LAST NAME (A-Z/a-z): ");
+        lastName = Console.ReadLine()?.Trim();
+    } while (string.IsNullOrWhiteSpace(lastName));
+
+    return $"{firstName} {lastName}";
+}
+
+static double GetUserNumber()
+{
+    double firstNumber, secondNumber;
+
+    while (true)
+    {
+        Console.Write("PLEASE ENTER FIRST NUMBER: ");
+        string? firstInput = Console.ReadLine();
+
+        if (double.TryParse(firstInput, out firstNumber))
+            break;
+
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine("INVALID INPUT. PLEASE ENTER A VALID NUMBER.\n");
+        Console.ForegroundColor = ConsoleColor.White;
     }
+
+    while (true)
+    {
+        Console.Write("PLEASE ENTER SECOND NUMBER: ");
+        string? secondInput = Console.ReadLine();
+
+        if (double.TryParse(secondInput, out secondNumber))
+            break;
+
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine("INVALID INPUT. PLEASE ENTER A VALID NUMBER.\n");
+        Console.ForegroundColor = ConsoleColor.White;
+    }
+
+    return firstNumber * secondNumber;
 }
