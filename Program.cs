@@ -94,7 +94,7 @@ namespace TestingApp
         {
             Console.Write("PLEASE ENTER YOUR FIRST NAME USE ONLY (A-Z) (a-z): ");
             string? firstName = Console.ReadLine();
-            Console.Write("PLEASE ENTER YOUR LAST NAMEUSE ONLY (A-Z) (a-z): ");
+            Console.Write("PLEASE ENTER YOUR LAST NAME USE ONLY (A-Z) (a-z): ");
             string? lastName = Console.ReadLine();
             
             return firstName + " " + lastName;
