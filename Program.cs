@@ -30,16 +30,20 @@ switch (input)
 {
     case "yes" or "yeah" or "sure":
         Console.WriteLine("THANKS!");
+        Console.ForegroundColor = ConsoleColor.White;
         break;
     case "no" or "nah":
         Console.WriteLine("NOT A PROBLEM!");
+        Console.ForegroundColor = ConsoleColor.White;
         break;
     case "not really" or "somehow":
         Console.WriteLine("OK! I GOT YOU.");
+        Console.ForegroundColor = ConsoleColor.White;
         break;
     case "exit":
         Console.Clear();
         Console.WriteLine("EXITING THE APP. GOODBYE!");
+        Console.ForegroundColor = ConsoleColor.White;
         Environment.Exit(0);
         break;
     default:
