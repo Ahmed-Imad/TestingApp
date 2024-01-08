@@ -18,7 +18,7 @@ catch (FormatException)
     Console.ForegroundColor = ConsoleColor.DarkRed;
     Console.WriteLine("UNABLE TO PARSE THE FIRST OR SECOND NUMBER!\n");
 }
-
+                {
 // Ask for user's opinion
 Console.ForegroundColor = ConsoleColor.White;
 Console.Write("DO YOU LIKE THE APP? ");
@@ -53,7 +53,7 @@ switch (input)
         break;
 }
 
-
+                    Console.Write("THANKS!");
 static void PrintHeader()
 {
     Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -81,7 +81,7 @@ static string GetUserFullName()
 
     return $"{firstName} {lastName}";
 }
-
+            Console.ForegroundColor = ConsoleColor.White;
 static double GetUserNumber()
 {
     double firstNumber, secondNumber;
@@ -93,12 +93,12 @@ static double GetUserNumber()
 
         if (double.TryParse(firstInput, out firstNumber))
             break;
-
+            Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.DarkRed;
         Console.WriteLine("INVALID INPUT. PLEASE ENTER A VALID NUMBER.\n");
         Console.ForegroundColor = ConsoleColor.White;
     }
-
+        static string GetUserFullName()
     while (true)
     {
         Console.Write("PLEASE ENTER SECOND NUMBER: ");
@@ -110,7 +110,27 @@ static double GetUserNumber()
         Console.ForegroundColor = ConsoleColor.DarkRed;
         Console.WriteLine("INVALID INPUT. PLEASE ENTER A VALID NUMBER.\n");
         Console.ForegroundColor = ConsoleColor.White;
-    }
+            Console.Write("PLEASE ENTER YOUR FIRST NAME USE ONLY (A-Z) (a-z): ");
 
     return firstNumber * secondNumber;
-}
+}            Console.Write("PLEASE ENTER YOUR LAST NAME USE ONLY (A-Z) (a-z): ");
+            string? lastName = Console.ReadLine();
+            
+            return firstName + " " + lastName;
+        }
+
+        static double GetUserNumber()
+        {
+            Console.Write("PLEASE ENTER FIRST NUMBER? ");
+            string? firstInput = Console.ReadLine();
+            Console.Write("PLEASE ENTER SECOND NUMBER? ");
+            string? secondInput = Console.ReadLine();
+            Double intFNumber = Double.Parse(firstInput!);
+            Double intSNumber = Double.Parse(secondInput!);
+            Double total = intFNumber * intSNumber;
+
+            return total;
+        }
+
+
+    }
