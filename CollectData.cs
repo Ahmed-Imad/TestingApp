@@ -78,10 +78,21 @@ public class CollectData
     private static bool GetYesNoAnswer()
     {
         string userInput;
+        int attempts=0;
         do
         {
             Console.Write("Please answer with 'yes' or 'no': ");
-            userInput = Console.ReadLine().Trim().ToLower();
+            userInput = Console.ReadLine().Trim().ToLower();            
+            
+            attempts++;
+            if (attempts >= 3)
+            {
+                Console.WriteLine("You have exceeded the maximum number of attempts.");
+                break;
+            }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"You have {3 - attempts} attempts.");
+            Console.ForegroundColor = ConsoleColor.White;
         } while (userInput != "yes" && userInput != "no");
 
         return userInput == "yes";
@@ -96,14 +107,15 @@ public class CollectData
             Console.WriteLine("Would you like to answer funny fact questions? (yes or no)");
             userInput = Console.ReadLine().Trim().ToLower();
             attempts++;
-            Console.ForegroundColor= ConsoleColor.Red;
-            Console.WriteLine($"You have {3 - attempts} attempts.");
-            Console.ForegroundColor= ConsoleColor.White;
+            
             if (attempts >= 3)
             {
                 Console.WriteLine("You have exceeded the maximum number of attempts.");
                 break;
             }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"You have {3 - attempts} attempts.");
+            Console.ForegroundColor = ConsoleColor.White;
 
         } while (userInput != "yes" && userInput != "no");
 
