@@ -25,21 +25,15 @@ Welcome to the Fun Wizard App! This console application allows users to answer f
    ```bash
    git clone https://github.com/your-username/fun-wizard-app.git
 Navigate to the project directory:
-
-bash
-Copy code
 cd fun-wizard-app
-Build the application:
 
-bash
-Copy code
+Build the application:
 dotnet build
+
 Usage
 Running the Application
 To run the Fun Wizard App, execute the following command in the terminal:
 
-bash
-Copy code
 dotnet run
 Answering Questions
 The app will prompt you to answer funny fact questions. Respond with 'yes' or 'no'.
@@ -47,5 +41,5 @@ After answering all questions, the app will provide a performance rating based o
 Contributing
 Contributions are welcome! If you find a bug or have a feature request, please open an issue.
 
-License
+### License
 This project is licensed under the MIT License.
