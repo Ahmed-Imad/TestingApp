@@ -96,6 +96,9 @@ public class CollectData
             Console.WriteLine("Would you like to answer funny fact questions? (yes or no)");
             userInput = Console.ReadLine().Trim().ToLower();
             attempts++;
+            Console.ForegroundColor= ConsoleColor.Red;
+            Console.WriteLine($"You have {3 - attempts} attempts.");
+            Console.ForegroundColor= ConsoleColor.White;
             if (attempts >= 3)
             {
                 Console.WriteLine("You have exceeded the maximum number of attempts.");
