@@ -27,15 +27,18 @@ Welcome to the Fun Wizard App! This console application allows users to answer f
 Navigate to the project directory:
 cd fun-wizard-app
 
-Build the application:
+2. **Build the application:**
+```bash
 dotnet build
 
-Usage
-Running the Application
+### Usage
+## Running the Application
 To run the Fun Wizard App, execute the following command in the terminal:
 
+'''bash
 dotnet run
-Answering Questions
+
+### Answering Questions
 The app will prompt you to answer funny fact questions. Respond with 'yes' or 'no'.
 After answering all questions, the app will provide a performance rating based on your answers.
 Contributing
