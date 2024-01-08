@@ -48,7 +48,9 @@ public class CollectData
          "There are more bacterial cells in your body than human cells?",
          "You don't like the sound of your own voice because of the bones in your head?"
         };
-
+        // Shuffling the questions
+        Random rand = new Random();
+        questions = questions.OrderBy(q => rand.Next()).ToArray();
         bool[] answers = new bool[questions.Length];
         bool[] correctAnswers = { true, true, true, true, true, true, true, true, true, true };
         int total = 100;
