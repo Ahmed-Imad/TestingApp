@@ -24,6 +24,7 @@ public static class UserMessages
 
     public static void CopyWrite()
     {
+        Console.ForegroundColor= ConsoleColor.White;
         Console.WriteLine();
         Console.WriteLine("----------------------------------");
         Console.WriteLine("This App was build by Ahmed Fattal");

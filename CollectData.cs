@@ -49,7 +49,7 @@ public class CollectData
          "You don't like the sound of your own voice because of the bones in your head?"
         };
         // Shuffling the questions
-       questions = ShuffleQuestions(questions);
+        questions = ShuffleQuestions(questions);
         bool[] answers = new bool[questions.Length];
         bool[] correctAnswers = { true, true, true, true, true, true, true, true, true, true };
         int total = 100;
@@ -110,12 +110,14 @@ public class CollectData
     public static string RatePerformance(int percentage)
     {
 
+        Console.ForegroundColor = ConsoleColor.DarkRed;
         if (percentage >= 80)
-            return " Your rate is Excellent.";
-        else if (percentage >= 60)
-            return "Your rate is Good.";
+            return
+                " Your rate is EXCELLENT. Above 80%";
+        else if (percentage >= 50)
+            return "Your rate is GOOD. Above 50%";
         else
-            return "Your rate is Not Very Good.";
+            return "Your rate is NOT VERY GOOD. Lower than 50%";
     }
 
     public static bool ProcessUserChoice()
