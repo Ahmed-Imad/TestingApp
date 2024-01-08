@@ -1,5 +1,5 @@
 # Fun Wizard App
-# Welcome to the Fun Wizard App! This console application allows users to answer funny fact questions and receive a performance rating based on their answers.
+## Welcome to the Fun Wizard App! This console application allows users to answer funny fact questions and receive a performance rating based on their answers.
 
 # Table of Contents
 # Getting Started
