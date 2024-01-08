@@ -49,8 +49,7 @@ public class CollectData
          "You don't like the sound of your own voice because of the bones in your head?"
         };
         // Shuffling the questions
-        Random rand = new Random();
-        questions = questions.OrderBy(q => rand.Next()).ToArray();
+       questions = ShuffleQuestions(questions);
         bool[] answers = new bool[questions.Length];
         bool[] correctAnswers = { true, true, true, true, true, true, true, true, true, true };
         int total = 100;
@@ -69,6 +68,11 @@ public class CollectData
 
         }
         return total;
+    }
+    private static string[] ShuffleQuestions(string[] questions)
+    {
+        Random rand = new Random();
+        return questions.OrderBy(q => rand.Next()).ToArray();
     }
 
     private static bool GetYesNoAnswer()
