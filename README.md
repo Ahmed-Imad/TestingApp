@@ -1,25 +1,25 @@
-Fun Wizard App
-Welcome to the Fun Wizard App! This console application allows users to answer funny fact questions and receive a performance rating based on their answers.
+# Fun Wizard App
+# Welcome to the Fun Wizard App! This console application allows users to answer funny fact questions and receive a performance rating based on their answers.
 
-Table of Contents
-Getting Started
-Prerequisites
-Installation
-Usage
-Running the Application
-Answering Questions
-Contributing
-License
-Getting Started
-Prerequisites
-.NET SDK
-Installation
-Clone the repository:
+# Table of Contents
+# Getting Started
+# Prerequisites
+# Installation
+# Usage
+# Running the Application
+# Answering Questions
+# Contributing
+# License
+# Getting Started
+# Prerequisites
+# .NET SDK
+# Installation
+# Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/your-username/fun-wizard-app.git
-Navigate to the project directory:
+# bash
+# Copy code
+# git clone https://github.com/your-username/fun-wizard-app.git
+# Navigate to the project directory:
 
 bash
 Copy code
