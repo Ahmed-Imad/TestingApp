@@ -77,13 +77,13 @@ public class CollectData
 
     private static bool GetYesNoAnswer()
     {
-        string userInput;
-        int attempts=0;
+        string? userInput;
+        int attempts = 0;
         do
         {
             Console.Write("Please answer with 'yes' or 'no': ");
-            userInput = Console.ReadLine().Trim().ToLower();            
-            
+            userInput = Console.ReadLine()?.Trim().ToLower();
+
             attempts++;
             if (attempts >= 3)
             {
@@ -100,14 +100,14 @@ public class CollectData
 
     public static bool AskUser()
     {
-        string userInput;
+        string? userInput;
         int attempts = 0;
         do
         {
             Console.WriteLine("Would you like to answer funny fact questions? (yes or no)");
-            userInput = Console.ReadLine().Trim().ToLower();
+            userInput = Console.ReadLine()?.Trim().ToLower();
             attempts++;
-            
+
             if (attempts >= 3)
             {
                 Console.WriteLine("You have exceeded the maximum number of attempts.");
